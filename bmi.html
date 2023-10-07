@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI calculator fo free</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="donate.css">
+    <link rel="shortcut icon" href="images/bmi.png" type="image/x-icon">
+    <style>
+        header{
+            position: static!important;
+            min-height: 120px;
+
+        }
+        input[type='number']{
+            padding: 10px;
+            margin-right: 20px;
+            border-radius: 20px;
+            border: none;
+            font-weight: bolder;
+            font-family: 'Ink free regular';
+        }
+
+        input[type='number']::placeholder{
+            font-weight: bolder;
+            color: #000;
+        }
+        input[type='number']:focus{
+            border: none;
+        }
+        @media(max-width:430px){
+            input[type='number']{
+                margin-bottom: 50px;
+            }
+        }
+
+        input[type='number']:focus{
+            border: none;
+
+        }
+
+        .interval{
+            padding:  11px 25px;
+            font-weight: bolder;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 30px;
+            font-size: 1.4em;
+            background-color: #000;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 2s;
+        }
+
+        
+        .interval:hover{
+          background-color: #fff;
+          color: #000;
+        }
+        .b{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            font-size: 1.5em;
+            line-height: 2em;
+            color: dodgerblue;
+           
+        }
+
+       
+        body{
+            background-color: #43a;
+            color: white;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <hr>
+    <center>
+        <input type="number" class="number-input" placeholder="Enter your height in centimeter" value="" id="in1"> <input type="number" placeholder="Enter ur weight in kg" value="" class="text" id="in2"> <br><button onclick="calculate()" class="interval">Calculate</button>
+        <p class="result">
+    
+        </p>
+    </center>
+    
+    <script>
+        function calculate(){
+           let input1=parseInt(document.getElementById('in1').value);
+           let input2=parseInt(document.getElementById('in2').value);
+           let correct= input1/100;
+           
+           let bmi=(input2/correct**2).toFixed(2);
+           document.querySelector('.result').innerHTML=`${bmi}`
+            
+           if(bmi<18.5){
+            document.querySelector('.result').innerHTML=`<p class='b'>You are Underweight</p> <br> Your Body Mass Index is ${bmi}`;
+
+           }
+
+           else if(bmi>=18.5&&bmi<=24.9){
+            document.querySelector('.result').innerHTML=`<p class='b'>Normal Weight </p> <br> Your Body Mass Index is ${bmi}`
+           }
+
+           else if(bmi>=25&&bmi<=29.9){
+            document.querySelector('.result').innerHTML=` <p class='b'>Overweight </p> <br> Your Body Mass Index is ${bmi}`
+           }
+
+           else if(bmi>=30){
+            document.querySelector('.result').innerHTML=`<p class='b'>Obesity</p> <br> Your Body Mass Index is ${bmi}`
+           }
+
+           if(!bmi){
+                document.querySelector('.result').innerHTML=`Invalid `
+            }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herons formula--- v1.0</title>
+    <link rel="stylesheet" href="abourt.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="donvate.css">
+    <link rel="shortcut icon" href="images/tri.png" type="image/x-icon">
+    <style>
+       header{
+        position: static!important;
+       }
+
+       .bother h1{
+        text-align: center;
+        color: #fff;
+        text-shadow: 5px 1px 6px black;
+        margin-bottom: 40px;
+       }
+
+
+       input[type='number']{
+            padding: 10px;
+            margin-right: 20px;
+            border-radius: 20px;
+            margin: 20px;
+            border: none;
+            font-weight: bolder;
+            font-family: 'Ink free regular';
+        }
+
+        input[type='number']:focus{
+            border: none;
+
+        }
+
+        .interval{
+            padding: 10px 15px;
+            font-weight: bolder;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 30px;
+            border: none;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 2s;
+        }
+
+        .interval:hover{
+            box-shadow: 2px 3px 4px rgba(0,0,0,0.4);
+        }
+
+        body{
+            background-color: #43a;
+            color: white;
+        }
+        body{
+            background-color: #43a;
+        }
+        .result{
+            line-height: 2em;
+            font-family: cursive,'Ink free regular','Courier New', Courier, monospace;
+            font-weight: bolder;
+            font-size: 1.4em;
+        }
+    </style>
+</head>
+<body>
+
+
+    <main>
+        <center>
+            <div class="bother">
+                <h1>Herons Formula Calculator</h1>
+               
+            </div>
+    <input type="number" placeholder="value of side one" class="a">
+    <input type="number" placeholder="value of  side two" class="b">
+    <br>
+    <input type="number" placeholder="value of side three" class="c">
+    <br>
+    <button class="interval" onclick="solve()">
+        Solve 👨‍🏫
+    </button>
+    <p class="result">
+
+    </p>
+        </center>
+        
+        
+    </main>
+
+    <script>
+        function solve(){
+            const a= parseFloat(document.querySelector('.a').value);
+            const b= parseFloat( document.querySelector('.b').value);
+            const c= parseFloat( document.querySelector('.c').value);
+            const s=(a+b+c)/2;
+            const dot1= s*(s-a);
+            const dot2= s*(s-b);
+            const dot3= s*(s-c);
+            const sqrt= dot1*dot2*dot3;
+            const area= Math.sqrt(s*(s-a)*(s-b)*(s-c));
+            if(!area){
+                document.querySelector('.result').innerHTML=`PLesae Enter valid number!`;
+
+            }
+
+            else if(area){
+                document.querySelector('.result').innerHTML=`Area is ${area} cm<sup>2</sup>`
+            }
+        }
+    </script>
+    
+</body>
+</html>

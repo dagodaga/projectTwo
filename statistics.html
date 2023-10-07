@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>staistics formula--- v1.0</title>
+    <link rel="stylesheet" href="abourt.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="donvate.css">
+    <link rel="shortcut icon" href="images/converter.png" type="image/x-icon">
+    <style>
+       header{
+        position: static!important;
+       }
+
+       .bother h1{
+        text-align: center;
+        color: #fff;
+        text-shadow: 5px 1px 6px black;
+        margin-bottom: 40px;
+       }
+
+
+       input[type='number']{
+            padding: 10px;
+            margin-right: 20px;
+            border-radius: 20px;
+            margin: 20px;
+            border: none;
+            font-weight: bolder;
+            font-family: cursive,'Ink free regular';
+        }
+
+        input[type='number']:focus{
+            border: none;
+
+        }
+
+        .interval{
+            padding: 10px 15px;
+            font-weight: bolder;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 30px;
+            border: none;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 2s;
+        }
+
+        .interval:hover{
+            box-shadow: 2px 3px 4px rgba(0,0,0,0.4);
+        }
+
+        body{
+            background-color: #43a;
+            color: white;
+        }
+        body{
+            background-color: #43a;
+            text-transform: capitalize;
+        }
+        .result,.result2,.result3{
+            line-height: 2em;
+            font-family: cursive,'Ink free regular','Courier New', Courier, monospace;
+            font-weight: bolder;
+            font-size: 1.4em;
+        }
+    </style>
+</head>
+<body>
+
+
+    <main>
+        <center>
+            <div class="bother">
+                <h1>Student Mark</h1>
+
+                <img src="C:/Users/HP/Desktop/www.w3schools.com/images/border.png" alt="">
+               
+            </div>
+    <input  type="number" placeholder="ICT" class="a">
+    <input  type="number" placeholder="Mathematics" class="b">
+    <input  type="number" placeholder="Physics" class="c">
+    <input  type="number" placeholder="Chemistry" class="d">
+    <input  type="number" placeholder="Biology" class="e">
+    <input  type="number" placeholder="HPE" class="f">
+    <input  type="number" placeholder="Geography" class="g">
+    <input  type="number" placeholder="Citizenship" class="h">
+    <input  type="number" placeholder="History" class="i">
+    <input  type="number" placeholder="Afaan Oromoo" class="j">
+    <input  type="number" placeholder="English" class="k">
+    <input  type="number" placeholder="Amharic" class="l">
+     
+    <br>
+   
+    <br>
+    <button class="interval" onclick="solve()">
+        Know
+    </button>
+    <p class="result">
+
+
+    </p>
+    <p class="result2"></p>
+    <p class="result3"></p>
+        </center>
+        
+        
+    </main>
+
+    <script>
+        function solve(){
+           const a= parseFloat(document.querySelector('.a').value);
+           const b= parseFloat(document.querySelector('.b').value);
+           const c= parseFloat(document.querySelector('.c').value);
+           const d= parseFloat(document.querySelector('.d').value);
+           const e= parseFloat(document.querySelector('.e').value);
+           const f= parseFloat(document.querySelector('.f').value);
+           const g= parseFloat(document.querySelector('.g').value);
+           const h= parseFloat(document.querySelector('.h').value);
+           const i= parseFloat(document.querySelector('.i').value);
+           const j= parseFloat(document.querySelector('.j').value);
+           const k= parseFloat(document.querySelector('.k').value);
+           const l= parseFloat(document.querySelector('.l').value);
+
+           const average= (a+b+c+d+e+f+g+h+i+j+k+l)/12;
+           const total=(a+b+c+d+e+f+g+h+i+j+k+l);
+           document.querySelector('.result').innerHTML=`Your avarage is ${average}`;
+           document.querySelector('.result2').innerHTML=`Your total is ${total}`;
+           
+           if(average<70){
+            document.querySelector('.result3').innerHTML=`Poor!`
+           }
+
+           else if(average>71){
+            document.querySelector('.result3').innerHTML=`Good going!!`;
+           }
+
+        }
+    </script>
+    
+</body>
+</html>

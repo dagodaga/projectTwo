@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herons formula--- v1.0</title>
+    <link rel="stylesheet" href="abourt.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="donvate.css">
+    <link rel="shortcut icon" href="images/age.png" type="image/x-icon">
+    <style>
+       header{
+        position: static!important;
+       }
+
+       .bother h1{
+        text-align: center;
+        color: #fff;
+        text-shadow: 5px 1px 6px black;
+        margin-bottom: 40px;
+       }
+
+
+       input[type='date']{
+            padding: 10px;
+            margin-right: 20px;
+            border-radius: 20px;
+            margin: 20px;
+            border: none;
+            font-weight: bolder;
+            font-family: 'Ink free regular';
+        }
+
+        input[type='number']:focus{
+            border: none;
+
+        }
+
+        .interval{
+           padding: 4px 18px;
+           border: none;
+           font-family: cursive,Arial, Helvetica, sans-serif;
+           font-size: 1.4em;
+           border-radius: 20px;
+           cursor: pointer;
+           transition: all 0.15s;
+           vertical-align: center;
+        }
+
+
+        .interval:active{
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .interval:hover{
+            background-color: #000;
+            color: white;
+        }
+
+        body{
+            background-color: #43a;
+            color: white;
+        }
+        body{
+            background-color: #43a;
+        }
+        .result{
+            line-height: 2em;
+            font-family: cursive,'Ink free regular','Courier New', Courier, monospace;
+            font-weight: bolder;
+            font-size: 1.4em;
+        }
+        
+
+        body{
+            font-family: cursive,Arial, Helvetica, sans-serif;
+        }
+
+
+        .flex{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+
+    <main>
+        <center>
+            <div class="bother">
+                <h1>I am age Calculator</h1>
+               
+            </div>
+    
+  <div class="flex">
+    <input type="date" placeholder="Your BirthDay" class="c" onkeydown="solver()">
+   
+    <button class="interval" onclick="solve()">
+        Solve 
+    </button>
+  </div>
+    <p class="result">
+
+    </p>
+        </center>
+        
+      
+        
+    </main>
+
+    <script>
+
+        function solver(){
+            if(event.key==='Enter'){
+                solve();
+            }
+
+            else if(event.key==='c'){
+                solve();
+            }
+        }
+        function solve(){
+            const data= document.querySelector('.c').value;
+           const current= new Date();
+           const birthday= new Date(data);
+           const age= current.getFullYear()-birthday.getFullYear();
+           const month= current.getMonth()-birthday.getMonth();
+           document.querySelector('.result').innerHTML=`You are ${age} years  and  ${month} months  old.`
+            if(!data){
+                document.querySelector('.result').innerHTML=`Ohh some thing went wrong try again and come agian ho ho ho ho `
+            }
+
+            else if(age>100){
+                document.querySelector('.result').innerHTML=`Ohh some thing went wrong try again and come agian ho ho ho ho `;
+            }
+
+            else if(age<0){
+                document.querySelector('.result').innerHTML=`Ohh some thing went wrong try again and come agian ho ho ho ho `;
+            }
+
+            
+            
+        }
+    </script>
+    
+</body>
+</html>

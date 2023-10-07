@@ -1,0 +1,91 @@
+.both{
+    display: grid;
+    grid-template-columns: 300px 300px;
+    width: 70%;
+    margin-left: 22%;
+    
+    row-gap: 100px;
+    column-gap: 40px;
+}
+.pro,.basic{
+   font-weight: 100;
+   font-family: Arial, Helvetica, sans-serif;
+   transition: box-shadow 0.15s;
+  
+    
+}
+.bas{
+    padding: 5px;
+    background-color:gray;
+   color: white;
+    height: 70px;
+    
+
+}
+main{
+    margin-top: 30px;
+}
+.h1{
+    margin-top: 18px;
+    display: inline-block;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+.main{
+    background-color: whitesmoke;
+}
+ul,li{
+    margin: 0;
+    
+    list-style: none;
+}
+li:not(header li){
+    border-bottom: 1px solid gray;
+    padding: 25px;
+}
+.footer{
+    background-color: lightgray;
+    height: 80px;
+}
+.footer button{
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 15px;
+    border: none;
+    background-color: gray;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.footer button:hover{
+    background-color: white;
+    color: black;
+}
+
+.pro:hover,.basic:hover{
+    box-shadow: 2px 2px 4px black;
+}
+.birr{
+    display: inline-block;
+    
+    vertical-align: middle;
+    
+    border-radius: 100%;
+    background-color: green;
+    color: white;
+    padding: 5px;
+}
+::selection{
+    color: red;
+    background-color: yellow;
+
+   
+
+}
+@media screen and (max-width:700px){
+    .both{grid-template-columns: 1fr;margin: 0;}
+    .pro,.basic{margin: 0;}
+}

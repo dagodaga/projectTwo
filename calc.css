@@ -1,0 +1,40 @@
+#inputOne{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: default;
+    box-shadow: 1px 1px 3px black;
+    width: 230px;
+}
+
+*{
+    box-sizing: border-box;
+}
+input[type='button']{
+   width: 50px;
+   margin: 0;
+   border-radius: 100%;
+   padding: 12px;
+   border: none;
+   background-color: aliceblue;
+   cursor: pointer;
+   font-weight: bolder;
+   font-size: 1.3em;
+}
+input[type='button']:active{
+    background-color: green;
+    color: red;
+}
+#inputOne:disabled{
+    background-color: #fff;
+    color: black;
+    font-weight: bolder;
+    font-size: 1.4em;
+
+}
+
+input[type='button']:hover{
+    color: blue;
+}
+
+
